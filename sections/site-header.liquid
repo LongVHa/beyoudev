@@ -1,0 +1,49 @@
+{%- assign navigation_menu = linklists[section.settings.navigation_menu] -%}
+
+<nav class="site-header__nav above-nav-mobile" role="main">
+    {% if settings.site_logo != blank %}
+        <div class="site-header__nav__site-logo">
+            <img src="{{settings.site_logo | img_url: '170x' }}" alt="">
+        </div>
+    {% endif %}
+
+    <ul class="site-header__nav__menu">
+        {% for link in navigation_menu.links %}
+            {% assign parent_link = link %}
+            <li class="nav-link">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+            <span class="separator">|</span>
+        {% endfor %} 
+    </ul>
+
+    <div class="site-header__nav__cart">
+        {% if setting.cart_logo %}
+            <a href="/cart">
+                <img src="{{ settings.cart_logo | img_url: '30x'}}" alt="">
+            </a>
+        {% else %}
+            <a href="/cart"><img src="{{ 'cart.png' | asset_url }}"></a>
+        {% endif %}
+            <img src="{{ 'burger.png' | asset_url }}" alt="">
+    </div>
+    </div>
+</nav>
+
+{% schema %}
+  {
+    "name": "Site Header",
+    "settings": [
+        {
+            "type":"link_list",
+            "id":"navigation_menu",
+            "label":"Navigation Menu"
+        },
+        {
+            "type":"link_list",
+            "id":"navigation_menu_mobile",
+            "label":"Mobile Navigation Menu"
+        }
+    ]
+  }
+{% endschema %}

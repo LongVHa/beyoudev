@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",()=>{productCarousel(),CBDCarousel()});const productCarousel=()=>{$(".home-product-carousel_wrap").owlCarousel({center:!0,loop:!0,items:3,dots:!0})},CBDCarousel=()=>{$(".home-cbd__carousel").owlCarousel({center:!0,items:4,dots:!0,loop:!0,autoplay:!0})};

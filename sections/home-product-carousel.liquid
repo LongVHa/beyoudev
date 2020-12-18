@@ -1,0 +1,79 @@
+{% assign ss = section.settings %}
+{% assign sb = section.blocks %}
+
+{% if ss.enable %}
+    {% if sb.size > 0 %}
+        <div class="home-product-carousel">
+            <div class="home-product-carousel_wrap owl-carousel">
+                {% for blk in sb %}
+                {% assign bl = blk.settings %}
+                <div class="home-product-carousel_item">
+                        <span class="home-product-carousel_bg" style="background-color:{{ bl.bg_color }}"></span>
+                        <div class="home-product-carousel_item__left">
+                            <img src="{{ bl.product_image | img_url: '170x350' }}" alt="">
+                        </div>
+                        <div class="home-product-carousel_item__right">
+                            <img src="{{ bl.company_logo | img_url: 'x41' }}" alt="">
+                            <div class="product-carousel__content">{{ bl.content }}</div>
+                            <a class="btn" href="{{bl.url}}">{{bl.button_text}}</a>
+                        </div>
+                </div>    
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
+{% schema %}
+{
+    "name":"Home Product Carousel",
+    "settings":[
+        {
+            "type":"checkbox",
+            "id":"enable",
+            "label":"Enable",
+            "default": true
+        }
+    ],
+    "blocks": [
+        {
+            "type": "Carousel",
+            "name": "Product",
+            "settings":[
+                {
+                    "type":"image_picker",
+                    "id":"product_image",
+                    "label":"Product Image"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"company_logo",
+                    "label":"Company Logo"
+                },
+                {
+                    "type": "color",
+                    "id": "bg_color",
+                    "label": "Background Colour",
+                    "default": "#FFFFFF"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "content"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text" 
+                },        
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Button Link" 
+                }    
+            ]
+        }
+    ]
+}
+{% endschema %}

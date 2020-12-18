@@ -1,0 +1,105 @@
+{% assign ss = section.settings %}
+{% assign sb = section.blocks %}
+
+{% if ss.enable %}
+    <div class="home-cbd">
+            <div class="home-cbd__header">
+                <div class="home-cbd__header__inner">
+                <h2>{{ ss.main_heading }}</h2>
+                <div class="home-cbd__header__content">
+                        {{ ss.main_content }}
+                        <div class="referal">
+                            {{ ss.referal_text }}
+                            <img src="{{ss.referal_logo | img_url: 'x45' }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% if sb.size > 0 %}
+                <div class="home-cbd__carousel owl-carousel">
+                    {% for blk in sb %}
+                        {% assign bl = blk.settings %}
+                        <div class="home-cbd_carousel_item">
+                                <div class="home-cbd_carousel_item__left">
+                                    <img src="{{ bl.product_image | img_url: '170x350' }}" alt="">
+                                </div>
+                                <div class="home-cbd_carousel_item__right">
+                                    <h2>{{ bl.title }}</h2>
+                                    <div class="home-cbd__content">{{ bl.content }}</div>
+                                    <a class="btn" href="{{ bl.url }}">{{ bl.button_text }}</a>
+                                </div>
+                        </div>    
+                    {% endfor %}      
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name": "Home CBD",
+    "settings":[
+        {
+            "type":"checkbox",
+            "id":"enable",
+            "label":"Enable",
+            "default": true
+        },
+        {
+            "type":"text",
+            "id":"main_heading",
+            "label": "Main Heading"
+        },
+        {            
+            "type":"richtext",
+            "id":"main_content",
+            "label": "Main content"
+        },
+        {
+            "type":"text",
+            "id":"referal_text",
+            "label": "Refer Text"
+        },
+        {
+            "type":"image_picker",
+            "id":"referal_logo",
+            "label": "Refer_logo"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "Carousel",
+            "name": "Product",
+            "settings":[
+                {
+                    "type":"image_picker",
+                    "id":"product_image",
+                    "label":"Product Image"
+                },
+                {
+                    "type":"text",
+                    "id":"title",
+                    "label":"Title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "content"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text" 
+                },        
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "Button Link" 
+                }    
+            ]
+        }
+    ]
+}
+{% endschema %}

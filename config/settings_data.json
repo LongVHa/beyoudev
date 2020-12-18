@@ -1,0 +1,17 @@
+{
+  "current": {
+    "sections": {
+      "site-header": {
+        "type": "site-header",
+        "settings": {
+          "nav_menu": "site-header",
+          "mobile_nav_menu": ""
+        }
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {}
+  }
+}
