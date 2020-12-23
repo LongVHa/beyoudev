@@ -1,17 +1,41 @@
 .site-header{
     width: 100%;
     @include flex-center;
-    margin: 30px 0;
+    margin: 15px 0;
+    top:0;
+    background-color: #fff;
+    z-index:99;
+
+    @include mobile {
+        margin: 0;
+        padding: 5px 0;
+        position: fixed;
+    }
 }
 
 .site-header__nav {
     font-family: 'Montserrat', sans-serif;
     width:1237px;
     height:42px;
+    padding: 30px 0;
     @include flexbox;
     @include align-items(center);
-    @include justify-content(space-evenly);
-    
+    @include justify-content(space-between);
+
+    &__site-logo > img {
+            height:42px;
+
+            @include mobile {
+                height:38px;
+            }
+    }
+
+    @include mobile{
+        width:100vw;
+        padding: 0 30px!important;
+        @include justify-content(space-between);
+    }
+
     &__menu{
         width:100%;
         max-width:880px;
@@ -19,15 +43,31 @@
         @include flexbox;
         @include flex-direction(row);
         @include justify-content(space-around);
+
+        @include mobile{
+           display:none;
+           top:35px!important;
+        }
         
         li.nav-link{
             a{
                 text-decoration: none;
+                height: 22px;
+                color: #5E5E5E;
+                font-family: 'Montserrat';
                 font-size: 15px;
                 font-weight: 500;
                 letter-spacing: 0;
                 line-height: 22px;
+                @include transition(all 0.5s);
+
+                &:hover{
+                    color: #29a69c;
+                }
             }
+        }
+        .separator:before{
+                content: '|';
         }
         .separator:last-of-type{
             display:none;
@@ -35,9 +75,178 @@
     }
 
     &__cart{
-        width: 120px;
-        margin-left:20px;
+        width: 90px;
         @include flexbox;
         @include justify-content(space-between);
+
+        .icon-bag,
+        .icon-account{
+            height: 31px;
+        }
+        
+        @include mobile {
+            width: 35px;
+            position: absolute;
+            right:70px;
+
+            a > img{
+                width:60px;
+            }
+
+            img {
+                width:60px;
+                max-width: 35px;
+            }
+
+            .icon-bag{
+                height:24px;
+                background-color: #fff;
+            }
+
+            .icon-account {
+                display:none;
+            }
+        }
     }
+}
+
+/* -- burger -- */
+.menu-btn {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 20px;
+    cursor: pointer;
+    @include transition(all 0.5s ease-in-out);
+
+    @include mobile {
+        @include order(3);
+        width:24px;
+        overflow: hidden;
+    }
+
+    &__burger{
+        width: 540px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 5px;
+        @include transition(all 0.5s ease-in-out);
+
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 3px;
+            background: #000;
+            border-radius: 5px;
+            transition: all .5s ease-in-out;
+
+            @include mobile{
+                width:24px;
+            }
+        }
+
+        &:before{
+            transform: translateY(-11px);
+
+            @include mobile{
+               transform: translateY(-8px);
+            }
+        }
+
+        &:after{
+            transform: translateY(11px);
+            
+            @include mobile{
+               transform: translateY(8px);
+            }
+        }
+
+    }
+
+    &.open{
+        & .menu-btn__burger{
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+
+            &:before{
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+
+            &:after{
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+        }
+    } 
+}
+
+ /* -- responsive -- */
+@include screens-and-below(1240px){
+    .site-header__nav{
+        width:100vw;
+        padding:0 40px;
+        @include justify-content(space-between);
+
+        .menu-btn{
+            @include flexbox;
+        }
+        
+        &__menu{
+            position:fixed;
+            z-index:99;
+            top:55px;
+            left:0;
+            height:calc(100% - 80px);
+            width:100%;
+            border-top:1px solid #eee;
+            max-width:100%;
+            text-align: center;
+            padding: 10px 0 80px;
+            background-color: #fff;
+            @include flexbox;
+            @include flex-direction(column);
+            @include transform(translateX(-110%));
+            @include transition(all 0.5s ease-in-out);
+        }
+
+        &__site-logo{
+            @include transform(translateX(23%));
+
+            @include mobile {
+                @include transform(translateX(0%));
+            }
+        }
+        .separator:before{
+                content: '';
+                border-bottom:1px solid #eee;
+                display:block;
+                width:100%;
+        }
+    }
+}
+
+.show-menu{
+    @include transform(translateX(0%));
+    @include transition(all 0.5s ease-in-out);
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    margin: 0;
+    border-bottom:1px solid #eee;
+}
+
+.close-gap{
+    top:33px!important;
+}
+
+.top-padding{
+    padding-top:91px;
 }

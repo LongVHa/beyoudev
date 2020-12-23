@@ -10,7 +10,9 @@
     background-size: fill;
     background-position: center;
     @include flex-center;
-    
+    -webkit-box-shadow: 0px 5px 3px -1px rgba(0,0,0,0.26); 
+    box-shadow: 0px 5px 3px -1px rgba(0,0,0,0.26);
+
     &__content{
         height:400px;
         margin-left:50px;
@@ -45,6 +47,85 @@
             height: 50px;
             width: 150px;
             line-height:24px;
+        }
+        .btn {
+            padding:12px 27px 15px;
+        }
+    }
+}
+
+@include tablet {
+    .home-banner{
+        &__content{
+            margin-left:80px;
+            @include transform(translateX(30%));
+
+            h1{
+                font-size: 60px;
+                line-height:60px;
+                max-width: 63%;
+            }
+
+            p{
+                font-size:20px;
+            }
+
+            .btn{
+                font-size:17px;
+            }
+
+            a{
+                width:140px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .home-banner{
+        background-position-x: 0%;
+        background-size:380px;
+        height:250px;
+
+        &__content{
+            margin-left: 0px;
+            height:200px;
+            @include justify-content(space-evenly);
+            @include align-self(center);
+
+            & > * {
+                margin-bottom: 8px;
+            }
+
+            h1{
+                height: 84px;
+                width: 210px;
+                color: #FFFFFF;
+                font-family: Barlow;
+                font-size: 46px;
+                font-weight: 800;
+                letter-spacing: 0;
+                line-height: 42px;
+            }
+
+            p{
+                height: 57px;
+                width: 188px;
+                color: #676767;
+                font-size: 15px;
+                letter-spacing: 0;
+                line-height: 19px;
+            }
+
+            a{
+                font-size: 20px;
+                height: 44px;
+                width: 120px;
+            }
+
+            .btn{
+                padding:8px 17px 15px;
+            }
         }
     }
 }

@@ -1,0 +1,17 @@
+main {
+    @include mobile{
+        overflow-x: none;
+        max-width: 100vw;
+        padding-top:52px;
+        &:after {
+            content: '';
+            position: absolute;
+            top:10px;
+            left:0;
+            width:50%;
+            height:100vh;
+            background-color: #F6F5FA;
+            z-index:-1;
+        }
+    }
+}

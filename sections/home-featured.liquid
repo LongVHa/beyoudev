@@ -1,0 +1,129 @@
+{% assign ss = section.settings %}
+{% assign sb = section.blocks %}
+
+{% if ss.enable %}
+<div class="home-featured flex f-center">
+    {% for blk in sb %}
+        {% assign bl = blk.settings %}
+        {% assign hasBackgr = false %}
+
+            <div class="home-featured__container {% if bl.img_outside -%}reduced-width{%- endif -%}" 
+               style="{% if bl.bg_image %} background-image: url({{ bl.bg_image | img_url: 'master' }});{% endif %} background-color: {{ bl.bg_color }}" 
+            >
+                <div class="home-featured__content-wrapper flex f-space-evenly f-dir-column {% if bl.img_outside -%}full-width{%- endif -%}">
+                    {% if bl.image %}
+                        <img class="home-featured__product-image {% if bl.img_outside -%}img-outside{%- endif -%}" src="{{ bl.image | img_url: 'master' }}" alt="">
+                    {% endif %}
+                    <h2 style="color: {{ bl.heading_color }}">{{ bl.heading_html }}</h2>
+                    <div class="home-featured__content">{{ bl.content }}</div>
+                    <div class="home-featured__button">
+                        <a class="btn" href="{{ bl.link }}"> {{ bl.link_text }}</a>
+                    </div>
+                    <div class="home-featured__comment"> {{ bl.comment_text }} </div>
+                    {% if bl.logo %}
+                        <div class="home-featured__logo"
+                        {% unless bl.highlight_color contains 'rgba(0,0,0,0)' %}
+                            style="color: {{ bl.highlight_color }}"
+                        {% endunless %}>
+                        <img src="{{ bl.logo | img_url: '258x' }}" alt="">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% unless bl.highlight_color contains 'rgba(0,0,0,0)' %}
+            <style>
+                .highlight {
+                    color: {{ bl.highlight_color }};
+                }
+            </style>
+            {% endunless %}
+
+    {% endfor %}
+</div>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Home Featured",
+    "settings": [
+        {
+            "type":"checkbox",
+            "id":"enable",
+            "label":"Enable",
+            "default": true
+        }
+    ],
+    "max_blocks": 2,
+    "blocks":[
+        {
+            "type": "featured",
+            "name": "featured",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label":"Image"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "img_outside",
+                    "label":"Image on the outside"
+                }, 
+                {
+                    "type": "html",
+                    "id": "heading_html",
+                    "label":"Heading",
+                    "info":"Add 'highlight' class to an element and choose a highlight color"
+                },
+                {
+                    "type": "color",
+                    "id": "heading_color",
+                    "label":"Heading Colour",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "color",
+                    "id": "highlight_color",
+                    "label":"Hightlight Colour"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label":"Content"
+                },
+                {
+                    "type": "text",
+                    "id": "link_text",
+                    "label":"Link Text"
+                },
+                {
+                    "type": "url",
+                    "id": "link_url",
+                    "label":"Link"
+                },
+                {
+                    "type": "color",
+                    "id": "bg_color",
+                    "label":"Background Colour"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label":"Background Image"
+                },
+                {
+                    "type": "text",
+                    "id": "comment_text",
+                    "label":"Comment Text"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label":"Company Logo"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

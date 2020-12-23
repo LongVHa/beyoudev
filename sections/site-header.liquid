@@ -1,6 +1,9 @@
 {%- assign navigation_menu = linklists[section.settings.navigation_menu] -%}
 
-<nav class="site-header__nav above-nav-mobile" role="main">
+<nav class="site-header__nav" role="main">
+
+    {% include 'burger_menu' %}
+
     {% if settings.site_logo != blank %}
         <div class="site-header__nav__site-logo">
             <img src="{{settings.site_logo | img_url: '170x' }}" alt="">
@@ -13,7 +16,7 @@
             <li class="nav-link">
                 <a href="{{ link.url }}">{{ link.title }}</a>
             </li>
-            <span class="separator">|</span>
+            <span class="separator"></span>
         {% endfor %} 
     </ul>
 
@@ -23,9 +26,9 @@
                 <img src="{{ settings.cart_logo | img_url: '30x'}}" alt="">
             </a>
         {% else %}
-            <a href="/cart"><img src="{{ 'cart.png' | asset_url }}"></a>
+            <a href="/cart"><img class="icon-bag" src="{{ 'bag.svg' | asset_url }}"></a>
         {% endif %}
-            <img src="{{ 'burger.png' | asset_url }}" alt="">
+            <img class="icon-account" src="{{ 'account.svg' | asset_url }}" alt="">
     </div>
     </div>
 </nav>

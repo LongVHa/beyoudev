@@ -1,11 +1,181 @@
 {
   "current": {
+    "site_logo": "shopify:\/\/shop_images\/Beyou_Logo-Black.png",
     "sections": {
       "site-header": {
         "type": "site-header",
         "settings": {
-          "nav_menu": "site-header",
-          "mobile_nav_menu": ""
+          "navigation_menu": "main-menu",
+          "navigation_menu_mobile": ""
+        }
+      },
+      "home-banner": {
+        "type": "home-banner",
+        "settings": {
+          "enable": true,
+          "image": "shopify:\/\/shop_images\/BYV3_Header_Group_Desktop_a.jpg",
+          "image_mobile": "shopify:\/\/shop_images\/BYV3_Header_Group_Mobile_a.jpg",
+          "heading": "natural solutions",
+          "content": "<p>for those everyday problems that <strong>no-one<\/strong> talks about.<\/p>",
+          "button_text": "Shop Now",
+          "url": "shopify:\/\/collections\/all"
+        }
+      },
+      "home-product-carousel": {
+        "type": "home-product-carousel",
+        "blocks": {
+          "5e326932-a8a0-4fc1-a408-e0e8440f6da5": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Hand_San_Feature_a.png",
+              "company_logo": "shopify:\/\/shop_images\/Beyou_Logo-White.png",
+              "bg_color": "#59d6b8",
+              "content": "<p>&#x27;Accessible, affordable &amp; fast delivery!&#x27;<\/p>",
+              "button_text": "Hand Sanitiser",
+              "url": "shopify:\/\/collections\/all"
+            }
+          },
+          "df3d6ab7-ecb6-436c-8068-b7904e07451e": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Anti-Chafing.png",
+              "company_logo": "shopify:\/\/shop_images\/Grazia_Logo-White.png",
+              "bg_color": "#faca2a",
+              "content": "<p>&#x27;Prevent the dreaded summer thigh chafing&#x27;<\/p>",
+              "button_text": "Chafing Cream",
+              "url": "shopify:\/\/collections"
+            }
+          },
+          "f273eecb-984c-4295-8d42-69049e3f010a": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Menstrual_Cup_Medium_ce4f31a2-a42b-4427-840a-fb8b08e7ef07.png",
+              "company_logo": "shopify:\/\/shop_images\/Womenshealth_Logo-white.png",
+              "bg_color": "#43b1e2",
+              "content": "<p>Women&#x27;s health say &#x27;Best to Buy&#x27;<\/p>",
+              "button_text": "Menstrual Cup",
+              "url": "shopify:\/\/collections\/all"
+            }
+          },
+          "4dc1e07f-8139-4df6-be74-13dcfc1b50ee": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Anti-Chafing.png",
+              "company_logo": "shopify:\/\/shop_images\/Womenshealth_Logo-white.png",
+              "bg_color": "#ffce00",
+              "content": "<p>Fusce efficitur justo nulla, ac rutrum massa<\/p>",
+              "button_text": "Shop Now"
+            }
+          },
+          "87b97e75-3a3d-4c49-b9c8-5980c7d3d7e9": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Hand_San_Feature_a.png",
+              "company_logo": "shopify:\/\/shop_images\/Grazia_Logo-White.png",
+              "bg_color": "#5bd498",
+              "content": "<p>Lorem ipsum dolor sit amet<\/p>",
+              "button_text": "Shop"
+            }
+          }
+        },
+        "block_order": [
+          "5e326932-a8a0-4fc1-a408-e0e8440f6da5",
+          "df3d6ab7-ecb6-436c-8068-b7904e07451e",
+          "f273eecb-984c-4295-8d42-69049e3f010a",
+          "4dc1e07f-8139-4df6-be74-13dcfc1b50ee",
+          "87b97e75-3a3d-4c49-b9c8-5980c7d3d7e9"
+        ],
+        "settings": {
+          "enable": true
+        }
+      },
+      "home-cbd": {
+        "type": "home-cbd",
+        "blocks": {
+          "e18cef3c-bb47-4c0d-aee6-bbabc86d11de": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Berry_Oral_Spray_Box_600mg.png",
+              "title": "our most popular CBD",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p>",
+              "button_text": "CBD drops",
+              "url": "shopify:\/\/collections"
+            }
+          },
+          "75073059-9dc4-45bc-9ce9-2a6219840809": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/Muscle_Balm_Tub.png",
+              "title": "easy to apply CBD balm",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p>",
+              "button_text": "CBD balm",
+              "url": "shopify:\/\/collections\/all"
+            }
+          },
+          "dff436d2-fcf5-44cb-8165-247bc1fd349c": {
+            "type": "Carousel",
+            "settings": {
+              "product_image": "shopify:\/\/shop_images\/CBD_Bath_Salts.png",
+              "title": "easy to apply CBD balm",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p>",
+              "button_text": "CBD balm",
+              "url": "shopify:\/\/collections\/all"
+            }
+          }
+        },
+        "block_order": [
+          "e18cef3c-bb47-4c0d-aee6-bbabc86d11de",
+          "75073059-9dc4-45bc-9ce9-2a6219840809",
+          "dff436d2-fcf5-44cb-8165-247bc1fd349c"
+        ],
+        "settings": {
+          "enable": true,
+          "main_heading": "the new wave for a natural lifestyle",
+          "main_content": "<p>Begin your CBD journey with our high-quality, independently tested CBD! We&#x27;ve created a variety of different forms, strengths and flavours to suit every lifestyle. Find the right CBD for you with BeYou.<\/p>",
+          "referal_text": "'As seen in'",
+          "referal_logo": "shopify:\/\/shop_images\/Glamour_Logo-Teal.png"
+        }
+      },
+      "home-featured": {
+        "type": "home-featured",
+        "blocks": {
+          "bc387f49-807d-425b-9433-e84e9308bf86": {
+            "type": "featured",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Sleep_Mist_Bottle_Box_tiny_800x_46466199-7cb8-498f-8f9b-8401a2c10d85.png",
+              "img_outside": false,
+              "heading_html": "Organic Sleep Pillow Mist",
+              "heading_color": "#ffffff",
+              "highlight_color": "#ac4747",
+              "content": "",
+              "link_text": "Sleep mist",
+              "bg_color": "",
+              "bg_image": "shopify:\/\/shop_images\/BYV3_Sleep_Feature_a_tiny_800x_ea9ecbd1-8b89-4276-9d8a-494cc00284d4.png",
+              "comment_text": ""
+            }
+          },
+          "ed7d5d4a-dce5-4a7c-8922-627d83e5d4ab": {
+            "type": "featured",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BYV3_Patch_x2_a_tiny_800x_7233a1c8-f741-4ad0-86de-f02a9f3cb4df.png",
+              "img_outside": true,
+              "heading_html": "All natural &amp; discreet comfort, <span class=\"highlight\">on the go!<\/span>",
+              "heading_color": "#ffe9e3",
+              "highlight_color": "#89270e",
+              "content": "<p>Discover our groundbreaking Monthly Patches, a 100% natural vegan formula which is released over 12 hours.<\/p>",
+              "link_text": "Monthly patch",
+              "bg_color": "#ff704b",
+              "comment_text": "‘Feels like witchcraft’",
+              "logo": "shopify:\/\/shop_images\/Cosmopolitan_Logo-white_1_800x_800x_578b57c2-0634-4997-83d0-bcd2ececcac2.png"
+            }
+          }
+        },
+        "block_order": [
+          "bc387f49-807d-425b-9433-e84e9308bf86",
+          "ed7d5d4a-dce5-4a7c-8922-627d83e5d4ab"
+        ],
+        "settings": {
+          "enable": true
         }
       }
     },

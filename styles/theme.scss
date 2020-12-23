@@ -3,18 +3,22 @@
 @import 'includes/variables';
 @import 'includes/mixins';
 @import 'includes/fonts';
+@import 'includes/helpers';
 
 // Elements
 @import 'elements/buttons';
 
 // Globals
+@import 'globals/general';
 @import 'globals/site-header';
 @import 'globals/site-footer';
 
 // Helpers
 @import 'helpers/responsive';
 
+
 // Sections
 @import 'sections/home-banner';
 @import 'sections/home-product-carousel';
 @import 'sections/home-cbd';
+@import 'sections/home-featured';

@@ -14,11 +14,14 @@
     .home-banner{
         background-image: url("{{ ss.image | img_url: 'x400' }}");
     }
-    @media (max-width: 480px){
-        .home-banner{
-            background-image: url("{{ ss.image | img_url: '375x' }}")
+    
+    {% if ss.image_mobile  %}
+        @media (max-width: 768px){
+            .home-banner{
+                background-image: url("{{ ss.image_mobile | img_url: 'master' }}")
+            }
         }
-    }
+    {% endif %}
 </style>
 
 {% schema %}
